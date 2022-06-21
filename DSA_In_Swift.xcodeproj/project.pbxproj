@@ -34,6 +34,7 @@
 /* Begin PBXFileReference section */
 		AE06D8A028614E68007215DF /* RotateArrayRightKtimes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RotateArrayRightKtimes.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE06D8A128615455007215DF /* ChangePhoneNumberFormat.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ChangePhoneNumberFormat.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AE06D8A22861600F007215DF /* ContactMatch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ContactMatch.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE3BCCB428563130005919D2 /* DSA_In_Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DSA_In_Swift; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3BCCB728563130005919D2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AE566CE92860B939005B3A8C /* LeetCode_In_Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode_In_Swift; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +63,7 @@
 			children = (
 				AE06D8A028614E68007215DF /* RotateArrayRightKtimes.playground */,
 				AE06D8A128615455007215DF /* ChangePhoneNumberFormat.playground */,
+				AE06D8A22861600F007215DF /* ContactMatch.playground */,
 			);
 			path = ArrayProblems;
 			sourceTree = "<group>";
