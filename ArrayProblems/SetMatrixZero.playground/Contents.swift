@@ -163,7 +163,7 @@ func setMatrixZeroBest(_ matrix : inout [[Int]])
     //travel from matrix[0][0] to matrix[row-1][column-1]
     for i in 0..<rows{
         if matrix[i][0] == 0 {
-            column0 = 0 // 0 = false
+            column0 = 0 // 0 = false //Setting this false now will come in handy later.
         }
         for j in 1..<(cols ?? 0){
             if matrix[i][j] == 0{
