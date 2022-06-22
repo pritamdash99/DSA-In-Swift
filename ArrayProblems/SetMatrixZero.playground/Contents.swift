@@ -141,3 +141,63 @@ print(matrixForTest)
 
  Space Complexity: O(N)
  */
+
+/*
+ Solution 3:Optimizing the better approach.
+
+ Intuition: Instead of taking two dummy arrays we can use the first row and column of the matrix for the same work. This will help to reduce the space complexity of the problem. While traversing for the second time the first row and column will be computed first, which will affect the values of further elements that’s why we traversing in the reverse direction.
+
+ Approach:Instead of taking two separate dummy array,take first row and column of the matrix as the array for checking whether the particular column or row has the value 0 or not.Since matrix[0][0] are overlapping.Therefore take separate variable col0(say) to check if the 0th column has 0 or not and use matrix[0][0] to check if the 0th row has 0 or not.Now traverse from last element to the first element and check if matrix[i][0]==0 || matrix[0][j]==0 and if true set matrix[i][j]=0,else continue.
+ */
+
+func setMatrixZeroBest(_ matrix : inout [[Int]])
+{
+    let rows = matrix.count
+    guard rows > 0 else
+    {
+        return
+    }
+    let cols = matrix.first?.count
+    var column0 = 1 // 1= true
+    
+    //travel from matrix[0][0] to matrix[row-1][column-1]
+    for i in 0..<rows{
+        if matrix[i][0] == 0 {
+            column0 = 0 // 0 = false
+        }
+        for j in 1..<(cols ?? 0){
+            if matrix[i][j] == 0{
+                //Once a 0 is found you make the left most and top most element as 0
+                matrix[i][0] = 0
+                matrix[0][j] = 0
+            }
+        }
+    }
+    
+    //Now travel backwards from matrix[row-1][column-1] to matrix[0][0]
+    for i in stride(from: rows-1, to: 0, by: -1)
+    {
+        for j in stride(from: (cols ?? 0) - 1, to: 1, by: -1)
+        {
+            if matrix[i][0] == 0 || matrix[0][j] == 0 {
+                matrix[i][j] = 0
+            }
+        }
+        if column0 == 0 {
+            matrix[i][0] = 0
+        }
+    }
+}
+
+var matrixNewForTest = [[1,1,1],[1,0,1],[1,1,1]]
+setMatrixZeroBetter(&matrixNewForTest)
+print(matrixNewForTest)
+
+/*
+ Output :
+ [[1, 0, 1], [0, 0, 0], [1, 0, 1]]
+ 
+ Time Complexity: O(2*(N*M)), as we are traversing two times in a matrix,
+
+ Space Complexity: O(1).
+ */
