@@ -24,9 +24,10 @@ import Cocoa
  Assuming all the elements in the matrix are non-negative. Traverse through the matrix and if you find an element with value 0, then change all the elements in its row and column to -1, except when an element is 0. The reason for not changing other elements to 0, but -1, is because that might affect other columns and rows. Now traverse through the matrix again and if an element is -1 change it to 0, which will be the answer.
  
  */
-func setMatrixZero(matrix : [[Int]]) -> [[Int]]{
+func setMatrixZeroBrute(matrix : [[Int]]) -> [[Int]]{
     var mutatedMatrix = matrix //doing this because matrix is immutable
     let row = mutatedMatrix.count
+    guard row > 0 else { return matrix }
     let column = (mutatedMatrix.first?.count ?? 0)
     
     for i in 0..<row{
@@ -83,7 +84,7 @@ func setMatrixZero(matrix : [[Int]]) -> [[Int]]{
     return mutatedMatrix
 }
 
-print(setMatrixZero(matrix: [[1,1,1],[1,0,1],[1,1,1]]))
+print(setMatrixZeroBrute(matrix: [[1,1,1],[1,0,1],[1,1,1]]))
 
 /*
  Output :
@@ -91,5 +92,52 @@ print(setMatrixZero(matrix: [[1,1,1],[1,0,1],[1,1,1]]))
  
  Time Complexity:O((N*M)*(N + M)). O(N*M) for traversing through each element and (N+M)for traversing to row and column of elements having value 0.
 
- Space Complexity:O(1)
+ Space Complexity:O(N)
+ */
+
+
+/*
+ Better Approach :
+ Intuition: Instead of traversing through each row and column, we can use dummy arrays to check if the particular row or column has an element 0 or not, which will improve the time complexity.
+
+ Approach:Take two dummy array one of size of row and other of size of column.Now traverse through the array.If matrix[i][j]==0 then set dummy1[i]=0(for row) and dummy2[j]=0(for column).Now traverse through the array again and if dummy1[i]==0  || dummy2[j]==0 then arr[i][j]=0,else continue.
+
+ */
+
+func setMatrixZeroBetter(_ matrix : inout [[Int]])
+{
+    let row = matrix.count
+    let column = (matrix.first?.count ?? 0)
+    
+    var dummyRow : [Int] = .init(repeating: -1, count: row)
+    var dummyCol : [Int] = .init(repeating: -1, count: column)
+
+    for i in 0..<row {
+        for j in 0..<column {
+            if matrix[i][j] == 0{
+                dummyRow[i] = 0
+                dummyCol[j] = 0
+            }
+        }
+    }
+    
+    for i in 0..<row{
+        for j in 0..<column{
+            if dummyRow[i] == 0 || dummyCol[j] == 0{
+                matrix[i][j] = 0
+            }
+        }
+    }
+}
+
+var matrixForTest = [[1,1,1],[1,0,1],[1,1,1]]
+print(setMatrixZeroBetter(&matrixForTest))
+
+/*
+ Output :
+ ()
+ 
+ Time Complexity: O(N*M + N*M)
+
+ Space Complexity: O(N)
  */
