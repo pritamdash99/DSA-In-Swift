@@ -131,12 +131,12 @@ func setMatrixZeroBetter(_ matrix : inout [[Int]])
 }
 
 var matrixForTest = [[1,1,1],[1,0,1],[1,1,1]]
-print(setMatrixZeroBetter(&matrixForTest))
-
+setMatrixZeroBetter(&matrixForTest)
+print(matrixForTest)
 /*
  Output :
  ()
- 
+ [[1, 0, 1], [0, 0, 0], [1, 0, 1]]
  Time Complexity: O(N*M + N*M)
 
  Space Complexity: O(N)
