@@ -25,3 +25,32 @@ import Cocoa
  
  */
 
+func generate(_ numRows: Int) -> [[Int]] {
+            guard numRows >= 1 && numRows <= 30 else {
+                return [[]]
+            }
+            
+            var resultArray: [[Int]] = []
+            while resultArray.count < numRows {
+                if resultArray.count == 0 {
+                    resultArray.append([1])
+                }
+                else if resultArray.count == 1 {
+                    resultArray.append([1,1])
+                }
+                else {
+                    var row : [Int] = []
+                    for column in 0...resultArray.count {
+                        if column == 0 || column == resultArray.count {
+                            row.append(1)
+                        }else{
+                            row.append(resultArray[resultArray.count-1][column-1] + resultArray[resultArray.count-1][column])
+                        }
+                    }
+                    resultArray.append(row)
+                }
+            }
+            return resultArray
+}
+
+
