@@ -54,3 +54,19 @@ func generate(_ numRows: Int) -> [[Int]] {
 }
 
 
+print(generate(0))
+print(generate(1))
+print(generate(5))
+print(generate(31))
+/*
+ Output :
+ [[]]
+ [[1]]
+ [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
+ [[]]
+ 
+ Time Complexity: We are creating a 2D array of size (numRows * numCols) (where 1 <= numCols <= numRows), and we are traversing through each of the cells to update it with its correct value, so Time Complexity = O(numRows2).
+
+ Space Complexity: Since we are creating a 2D array, space complexity = O(numRows2).
+ */
+
