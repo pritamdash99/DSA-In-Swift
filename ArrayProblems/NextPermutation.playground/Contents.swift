@@ -32,5 +32,40 @@ import Cocoa
  Step 3: Print the next permutation present right after it.
  
  */
+//Code for finding all possible permutations.
+func permuteRecursive(nums n: [Int], begin: Int, result: inout [[Int]]) {
+    var nums = n
+        if begin >= nums.count {
+            result.append(nums)
+            return
+        }
+        for i in begin..<nums.count {
+            nums.swapAt(i, begin)
+            permuteRecursive(nums: nums, begin: begin + 1, result: &result)
+            nums.swapAt(i, begin)
+        }
+    }
+
+func permute(_ nums: [Int]) -> [Int] {
+        var result = [[Int]]()
+    permuteRecursive(nums: nums.sorted(), begin: 0, result: &result)
+    
+    var currentPermutation : [Int] = []
+    
+    for i in 0..<result.count{
+        currentPermutation = []
+        for j in 0..<result[i].count{
+            currentPermutation.append(result[i][j])
+            if currentPermutation == nums {
+                return result[i+1]
+            }
+        }
+        
+    }
+        return []
+    }
+
+print(permute([1,2,3]))
+
 
 
