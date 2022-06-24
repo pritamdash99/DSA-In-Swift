@@ -67,5 +67,15 @@ func permute(_ nums: [Int]) -> [Int] {
 
 print(permute([1,2,3]))
 
+/*
+ 
+ Time Complexity :
+ 
+ For finding, all possible permutations, it is taking N!xN. N represents the number of elements present in the input array. Also for searching input arrays from all possible permutations will take N!. Therefore, it has a Time complexity of O((N!xN) + N*N).
+
+ Space Complexity :
+
+ Since we are using an extra array to solve this so O(N) ).
+ */
 
 
