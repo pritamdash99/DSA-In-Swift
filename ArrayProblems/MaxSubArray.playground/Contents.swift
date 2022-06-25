@@ -66,3 +66,36 @@ Constraints:
 
  ->Return the largest subarray sum that is:- msf.
  */
+func maxSubArray(_ nums: [Int]) -> Int {
+    guard nums.count >= 1 && nums.count <= 105 else {
+        return 0
+    }
+    
+    for i in 0..<nums.count{
+        if nums[i] >= -10000 && nums[i] <= 10000 {
+            continue
+        }else{
+            return 0
+        }
+    }
+    
+    var maxSum = nums[0]
+    var sum = 0
+    
+    for i in 0..<nums.count{
+        sum += nums[i]
+        if(sum<0){
+            sum = 0
+        }
+        if(sum>maxSum){
+            maxSum = sum
+        }
+    }
+    return maxSum
+}
+
+print(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+print(maxSubArray([1]))
+print(maxSubArray([2,3,-22221]))
+print(maxSubArray([2,1,22221]))
+print(maxSubArray([]))
