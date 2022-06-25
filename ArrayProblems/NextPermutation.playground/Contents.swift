@@ -141,6 +141,5 @@ var findPermutationnn : [Int] = [1,4,5,2,3]
 nextPermutationLeetCodeNew(&findPermutationnn)
 print(findPermutationnn)
 /*
- Output :
- [1, 4, 5, 3, 2]
+ [1,4,5,2,3] -> [1, 4, 5, 3, 2]
  */
