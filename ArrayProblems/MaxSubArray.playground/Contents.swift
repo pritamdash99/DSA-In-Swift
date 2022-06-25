@@ -1,7 +1,9 @@
 import Cocoa
 
 /*
- Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+ Maximum Subarray
+ 
+ Problem statement : Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
  A subarray is a contiguous part of an array.
  
  Example 1:
@@ -25,4 +27,14 @@ Constraints:
 -104 <= nums[i] <= 104
 
 
+ */
+
+/*
+ Solution 1: Naive Approach
+
+ Approach: Using three for loops, we will get all possible subarrays in two loops and their sum in another loop, and then return the maximum of them.
+ Time Complexity: O(N^3)- TLE
+
+ Space Complexity: O(1)
+ 
  */
