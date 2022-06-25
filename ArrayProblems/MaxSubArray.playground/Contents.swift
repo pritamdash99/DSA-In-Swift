@@ -37,4 +37,9 @@ Constraints:
 
  Space Complexity: O(1)
  
+ Solution 2: A better approach
+
+ Approach :
+
+ We can also do this problem using only two for loop, starting the function with ( max_sum ) variable which will have the final answer. We can get the sum of all possible subarrays in this way and then return the maximum so far.
  */
