@@ -79,3 +79,68 @@ print(permute([1,2,3]))
  */
 
 
+func nextPermutationLeetCode(_ nums: inout [Int]) {
+        let len = nums.count
+        var lhs = -1, rhs = -1, idx = len - 2
+        while idx >= 0 {
+            if nums[idx] < nums[idx + 1] { lhs = idx; break }
+            idx -= 1
+        }
+        if lhs == -1 { nums = nums.reversed(); return }
+        
+        idx = len - 1
+        while idx > lhs {
+            rhs = idx
+            if nums[idx] > nums[lhs] { break }
+            idx -= 1
+        }
+        nums.swapAt(lhs, rhs)
+        nums.replaceSubrange(lhs + 1..<len, with: nums[lhs + 1...len - 1].reversed())
+    }
+var findPermutationnew = [4,1,3,2]
+nextPermutationLeetCode(&findPermutationnew)
+print(findPermutationnew)
+
+
+func nextPermutationLeetCodeNew(_ nums: inout [Int]){
+    guard nums.count >= 1 else {
+        return
+    }
+    var len = nums.count
+    var i = 1
+    var peek = -1
+    
+    //checking if the array is in descending order
+    if nums == nums.sorted().reversed(){
+        nums = nums.reversed()
+        return
+    }
+    
+    //Find the peak of the last ascending order
+    while(i<len){
+        if nums[i] > nums[i-1]{
+            peek = i
+        }
+        i += 1
+    }
+    
+    //Find element in the range(nums[peek - 1] to nums[peek]) to the right
+    var index = peek
+    for i in peek..<len {
+        if(nums[i] > nums[peek - 1] && nums[i] < nums[index]){
+            index = i
+        }
+    }
+    
+    nums.swapAt(peek - 1, index)
+    nums[nums.startIndex + peek..<nums.endIndex].sort()
+}
+
+print("***")
+var findPermutationnn : [Int] = [1,4,5,2,3]
+nextPermutationLeetCodeNew(&findPermutationnn)
+print(findPermutationnn)
+/*
+ Output :
+ [1, 4, 5, 3, 2]
+ */
