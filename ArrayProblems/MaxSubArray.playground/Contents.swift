@@ -66,8 +66,9 @@ Constraints:
 
  ->Return the largest subarray sum that is:- msf.
  */
+//logic of techdose
 func maxSubArray(_ nums: [Int]) -> Int {
-    guard nums.count >= 1 && nums.count <= 105 else {
+    guard nums.count >= 1 && nums.count <= 100000 else {
         return 0
     }
     
@@ -84,18 +85,24 @@ func maxSubArray(_ nums: [Int]) -> Int {
     
     for i in 0..<nums.count{
         sum += nums[i]
-        if(sum<0){
-            sum = 0
+        if(sum<nums[i]){
+            sum = nums[i]
         }
-        if(sum>maxSum){
+        if(maxSum<sum){
             maxSum = sum
         }
     }
     return maxSum
 }
+/*
+ Time Complexity: O(N)
 
-print(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
-print(maxSubArray([1]))
+ Space Complexity:O(1)
+ */
+print(maxSubArray([-2,-3,4,-1,-2,1,5,-3]))
+print(maxSubArray([-1]))
 print(maxSubArray([2,3,-22221]))
 print(maxSubArray([2,1,22221]))
 print(maxSubArray([]))
+
+
