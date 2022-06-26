@@ -164,3 +164,44 @@ print(leetcodeMaxSubArray(arrayForTest))
 print(leetcodeMaxSubArray([-1]))
 
 
+//Striver logic.
+func strivermaxSubArray(_ nums : [Int]) -> Int {
+    guard nums.count >= 1 && nums.count <= 100000 else {
+        return 0
+    }
+    for i in 0..<nums.count{
+        guard nums[i] >= -10000 && nums[i] <= 10000 else{
+            return 0
+        }
+    }
+    var maxSum = nums[0]
+    var sum = 0
+    for i in 0..<nums.count{
+        sum += nums[i]
+        if(sum>maxSum){
+            maxSum = sum
+        }
+        if(sum<0){
+            sum = 0
+        }
+    }
+    return maxSum
+}
+print("***************")
+print(strivermaxSubArray([-1]))
+print(strivermaxSubArray([-2,-3,4,-1,-2,1,5,-3]))
+print(strivermaxSubArray([2,3,-22221]))
+print(strivermaxSubArray([2,1,22221]))
+print(strivermaxSubArray([]))
+/*
+ Output
+ ***************
+ -1
+ 7
+ 0
+ 0
+ 0
+ 
+ Time Complexity: O(N)
+ Space Complexity:O(1)
+ */
