@@ -147,3 +147,20 @@ var subArrayForTest : [Int] = []
 print(maxSubArrayWithSubArray(nums: arrayForTest, subArray: &subArrayForTest))
 print(subArrayForTest)
 
+//Leetcode solution on github
+func leetcodeMaxSubArray(_ nums: [Int]) -> Int {
+    var maxSum = nums[0]
+    var sum = nums[0]
+    
+    for i in 1..<nums.count {
+        sum = max(sum + nums[i], nums[i])
+        maxSum = max(sum, maxSum)
+    }
+    
+    return maxSum
+    }
+print("*****")
+print(leetcodeMaxSubArray(arrayForTest))
+print(leetcodeMaxSubArray([-1]))
+
+
