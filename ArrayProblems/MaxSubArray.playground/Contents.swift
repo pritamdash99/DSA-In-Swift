@@ -105,4 +105,45 @@ print(maxSubArray([2,3,-22221]))
 print(maxSubArray([2,1,22221]))
 print(maxSubArray([]))
 
+//Striver logic
+//To get the sub array also.
+func maxSubArrayWithSubArray(nums : [Int], subArray : inout [Int]) -> Int{
+    guard nums.count >= 1 && nums.count <= 105 else {
+        return 0
+    }
+    
+    for i in 0..<nums.count{
+        if nums[i] >= -10000 && nums[i] <= 10000 {
+            continue
+        }else{
+            return 0
+        }
+    }
+    
+    var maxSum = nums[0]
+    var sum = 0
+    var startIndex = 0
+    
+    for i in 0..<nums.count{
+        sum += nums[i]
+        
+        if(sum>maxSum){
+            subArray = []
+            maxSum = sum
+            subArray.append(nums[startIndex])
+            subArray.append(nums[i])
+        }
+        
+        if(sum<0){
+            sum = 0
+            startIndex = i+1
+        }
+    }
+    return maxSum
+}
+
+var arrayForTest :[Int] = [-1]
+var subArrayForTest : [Int] = []
+print(maxSubArrayWithSubArray(nums: arrayForTest, subArray: &subArrayForTest))
+print(subArrayForTest)
 
