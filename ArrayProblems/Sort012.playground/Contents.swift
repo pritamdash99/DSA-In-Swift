@@ -68,3 +68,35 @@ import Cocoa
  The array formed after these steps will be a sorted array.
  */
 
+func sortColors(_ nums: inout [Int]) {
+    guard nums.count >= 1 && nums.count <= 300 else {
+        return
+    }
+    
+    for i in 0..<nums.count{
+        guard nums[i] == 0 || nums[i] == 1 || nums[i] == 2 else{
+            return
+        }
+    }
+    
+    var left = 0
+    var mid = 0
+    var right = nums.count - 1
+    while mid <= right {
+        switch nums[mid]
+        {
+        case 0 :
+            nums.swapAt(left,mid)
+            left += 1
+            mid += 1
+        case 1 :
+            mid += 1
+        case 2 :
+            nums.swapAt(mid, right)
+            right -= 1
+        default :
+            print("do nothing")
+        }
+    }
+}
+
