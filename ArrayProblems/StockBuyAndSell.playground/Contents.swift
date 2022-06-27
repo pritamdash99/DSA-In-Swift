@@ -40,6 +40,22 @@ import Cocoa
      Return maxPro.
  */
 
+func maxProfit(_ prices: [Int]) -> Int {
+    var maxPro : Int = 0
+    for i in 0..<prices.count {
+        for j in i+1..<prices.count{
+            if(prices[j] > prices[i]){
+                maxPro =  max(prices[j] - prices[i], maxPro)
+            }
+        }
+    }
+    return maxPro
+}
 
-
+print(maxProfit([7,1,5,3,6,4]))
+/*
+ Output = 5
+ Time complexity: O(n^2)
+ Space Complexity: O(1)
+ */
 
