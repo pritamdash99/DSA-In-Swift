@@ -104,3 +104,8 @@ print("Before Sorting: ",arrayForTest)
 sortColors(&arrayForTest)
 print("After Sroting: ",arrayForTest)
 
+/*
+ Output :
+ Before Sorting:  [2, 0, 1, 1, 2, 1, 1, 0]
+ After Sroting:  [0, 0, 1, 1, 1, 1, 2, 2]
+ */
