@@ -99,4 +99,8 @@ func sortColors(_ nums: inout [Int]) {
         }
     }
 }
+var arrayForTest = [2,0,1,1,2,1,1,0]
+print("Before Sorting: ",arrayForTest)
+sortColors(&arrayForTest)
+print("After Sroting: ",arrayForTest)
 
