@@ -73,7 +73,37 @@ print(maxProfit([7,1,5,3,6,4]))
      Take the difference of the minPrice with the current element of the array and compare and maintain it in maxPro.
      Return the maxPro.
  */
-
+func maxProfitt(_ prices: [Int]) -> Int {
+    guard prices.count >= 1 && prices.count <= 100000 else {
+        return 0
+    }
+    
+    for i in 0..<prices.count{
+        guard prices[i] >= 0  && prices[i] <= 10000 else {
+            return 0
+        }
+    }
+    
+    var maxPro = 0
+    var minPrice = Int.max
+   
+    for i in 0..<prices.count{
+        minPrice = min(minPrice, prices[i])
+        maxPro = max(maxPro, prices[i] - minPrice)
+    }
+    return maxPro
+}
+print(maxProfitt([]))
+print(maxProfitt([7,1,5,3,6,4]))
+/*
+ Output :
+ 0
+ 5
+ 
+ TC : O(N)
+ SC : O(1)
+ 
+ */
 
 
 
