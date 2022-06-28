@@ -49,4 +49,42 @@ print(rotateMatricBrute(matrix: [[1,2,3],[4,5,6],[7,8,9]]))
  Step2: Reverse each row of the matrix.
  */
 
+func rotateMatrix(matrix : inout [[Int]]){
+    guard matrix.count >= 1 && matrix.count <= 20 else { return }
+    guard matrix.count == matrix[0].count else { return }
+    let n = matrix.count
+    for i in 0..<n{
+        for j in 0..<n{
+            guard matrix[i][j] >= -1000 && matrix[i][j] <= 1000 else {
+                return
+            }
+        }
+    }
+    for i in 0..<n{
+        for j in i..<matrix[0].count{
+            var temp = 0
+            temp = matrix[i][j]
+            matrix[i][j] = matrix[j][i]
+            matrix[j][i] = temp
+        }
+    }
+    for i in 0..<n{
+        for j in 0..<n/2{
+            var temp = 0
+            temp = matrix[i][j]
+            matrix[i][j] = matrix[i][n - 1 - j]
+            matrix[i][n - 1 - j] = temp
+        }
+    }
+}
+
+var matrixForTest = [[1,2,3],[4,5,6],[7,8,9]]
+rotateMatrix(matrix: &matrixForTest)
+print(matrixForTest)
+/*
+ Output :
+ [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+ TC = O(n^2)
+ SC = O(1)
+ */
 
