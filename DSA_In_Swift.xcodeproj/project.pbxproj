@@ -41,6 +41,7 @@
 		AE4BC77E28654AB900E666E2 /* NextPermutation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = NextPermutation.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE566CE92860B939005B3A8C /* LeetCode_In_Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode_In_Swift; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5926962867768A00E8C8D6 /* MaxSubArray.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MaxSubArray.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AEB0B160286B758900304F3E /* RotateMatrix90.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RotateMatrix90.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AEC77EA02868C23B00B1036C /* Sort012.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Sort012.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AEEABA992869EAAB00D769E7 /* StockBuyAndSell.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StockBuyAndSell.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AEEF131B28629E5C00906D8E /* SetMatrixZero.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SetMatrixZero.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -76,6 +77,7 @@
 				AE5926962867768A00E8C8D6 /* MaxSubArray.playground */,
 				AEC77EA02868C23B00B1036C /* Sort012.playground */,
 				AEEABA992869EAAB00D769E7 /* StockBuyAndSell.playground */,
+				AEB0B160286B758900304F3E /* RotateMatrix90.playground */,
 			);
 			path = ArrayProblems;
 			sourceTree = "<group>";
