@@ -19,4 +19,22 @@ import Cocoa
 
  Explanation: Rotate the matrix simply by 90 degree clockwise and return the matrix
  
+ Solution 1:Brute force
+
+ Approach: Take another dummy matrix of n*n, and then take the first row of the matrix and put it in the last column of the dummy matrix, take the second row of the matrix, and put it in the second last column of the matrix and so.
  */
+func rotateMatricBrute(matrix : [[Int]]) -> [[Int]]{
+    let n = matrix.count
+    var rotatedMatrix : [[Int]] = [[]]
+
+    for i in 0..<n {
+        for j in 0..<n {
+            rotatedMatrix[j][i] = matrix[i][j]
+        }
+    }
+    return rotatedMatrix
+}
+
+print(rotateMatricBrute(matrix: [[1,2,3],[4,5,6],[7,8,9]]))
+
+
