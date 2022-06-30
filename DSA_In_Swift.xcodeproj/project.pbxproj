@@ -44,6 +44,7 @@
 		AEB0B160286B758900304F3E /* RotateMatrix90.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RotateMatrix90.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AEC77EA02868C23B00B1036C /* Sort012.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Sort012.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AEC84F3E286DF50D00C6C2C2 /* Merge-Overlapping-Sub-intervals.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Merge-Overlapping-Sub-intervals.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AEC84F3F286E0B7C00C6C2C2 /* MinimumMovesToEqualArrayElements-II.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "MinimumMovesToEqualArrayElements-II.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AEEABA992869EAAB00D769E7 /* StockBuyAndSell.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StockBuyAndSell.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AEEF131B28629E5C00906D8E /* SetMatrixZero.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SetMatrixZero.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
@@ -80,6 +81,7 @@
 				AEEABA992869EAAB00D769E7 /* StockBuyAndSell.playground */,
 				AEB0B160286B758900304F3E /* RotateMatrix90.playground */,
 				AEC84F3E286DF50D00C6C2C2 /* Merge-Overlapping-Sub-intervals.playground */,
+				AEC84F3F286E0B7C00C6C2C2 /* MinimumMovesToEqualArrayElements-II.playground */,
 			);
 			path = ArrayProblems;
 			sourceTree = "<group>";
