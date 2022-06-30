@@ -33,3 +33,19 @@ import Cocoa
 
 
  */
+func minMoves2(_ nums: [Int]) -> Int {
+        guard nums.count >= 1 && nums.count <= 100000 else {
+            return 0
+        }
+        let sorted = nums.sorted()
+        var start = 0
+        var end = sorted.count - 1
+        var count = 0
+        while start<end {
+            count += sorted[end] - sorted[start]
+            start += 1
+            end -= 1
+        }
+        return count
+}
+print(minMoves2([1,10,2,9]))
