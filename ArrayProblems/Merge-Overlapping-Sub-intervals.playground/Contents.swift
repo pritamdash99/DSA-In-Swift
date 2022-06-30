@@ -69,3 +69,9 @@ func merge(_ intervals : [[Int]]) -> [[Int]] {
     return resultArray
 }
 print(merge([[1,3],[2,6],[8,10],[15,18]]))
+/*
+ O/p :
+ [[1, 6], [8, 10], [15, 18]]
+ 
+ TC = O(nlogn) + O(n) 
+ */
