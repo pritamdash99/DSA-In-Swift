@@ -49,3 +49,10 @@ func minMoves2(_ nums: [Int]) -> Int {
         return count
 }
 print(minMoves2([1,10,2,9]))
+/*
+ Output:
+ 16
+ 
+ TC : O(nlogn) + O(n)
+ SC = O(n)
+ */
