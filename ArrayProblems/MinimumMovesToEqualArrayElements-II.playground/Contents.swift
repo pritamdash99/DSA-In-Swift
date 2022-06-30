@@ -31,7 +31,7 @@ import Cocoa
      1 <= nums.length <= 10^5
      -10^9 <= nums[i] <= 10^9
 
-
+Youtube link : https://www.youtube.com/watch?v=Wo168YDPwzk
  */
 func minMoves2(_ nums: [Int]) -> Int {
         guard nums.count >= 1 && nums.count <= 100000 else {
