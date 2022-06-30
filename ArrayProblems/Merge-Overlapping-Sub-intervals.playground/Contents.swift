@@ -40,3 +40,32 @@ import Cocoa
  Intuition: Since we have sorted the intervals, the intervals which will be merging are bound to be adjacent. We kept on merging simultaneously as we were traversing through the array and when the element was non-overlapping we simply inserted the element in our data structure.
  */
 
+func merge(_ intervals : [[Int]]) -> [[Int]] {
+    if intervals.isEmpty {
+        return []
+    }
+    //sort the array on the basis of the 1st element of the indexes and store it another data structure.
+    var sorted = intervals.sorted { $0[0] < $1[0] }
+    //storing the first sub array as default result matrix.
+    var resultArray = [sorted.first!]
+    //start from the second element as the 1st element is already a default part of the result array.
+    for i in 1..<sorted.count{
+        let previousStart = resultArray.last![0]
+        let previousEnd = resultArray.last![1]
+        
+        let currentStart = sorted[i][0]
+        let currentEnd = sorted[i][1]
+        
+        //putting the overlapping condition.
+        if previousEnd >= currentStart && previousEnd < currentEnd {
+            //remove the last element of the resultArray as it needs to be replaced by the new merged element.
+            resultArray.removeLast()
+            resultArray.append([previousStart, currentEnd])
+        } else if previousEnd < currentStart {
+            //as the above condition fails we just add the current start and current end.
+            resultArray.append([currentStart, currentEnd])
+        }
+    }
+    return resultArray
+}
+print(merge([[1,3],[2,6],[8,10],[15,18]]))
