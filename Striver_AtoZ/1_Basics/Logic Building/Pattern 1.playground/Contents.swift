@@ -22,8 +22,8 @@
 import Foundation
 
 func printSquare(_ n : Int){
-    for i in 0..<n{
-        for j in 0..<n{
+    for _ in 0..<n{
+        for _ in 0..<n{
             print("* ", terminator: "")
         }
         print("")
@@ -37,5 +37,5 @@ printSquare(5)
  * * * * *
  * * * * *
  * * * * *
- * * * * * 
+ * * * * *
  */
