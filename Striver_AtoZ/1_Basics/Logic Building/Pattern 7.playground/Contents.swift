@@ -39,7 +39,6 @@ func printTriangle(_ n : Int){
 printTriangle(5)
 
 /*
-
  Output :
  
     *
