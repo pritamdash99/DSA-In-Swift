@@ -4,15 +4,11 @@
  Input: 5
 
  Output:
- *
- * *
- * * *
- * * * *
- * * * * *
- * * * *
- * * *
- * *
- *
+ 1
+ 0 1
+ 1 0 1
+ 0 1 0 1
+ 1 0 1 0 1
 
  Your Task:
 
@@ -26,18 +22,18 @@
 import Foundation
 
 func printTriangle(_ n : Int){
-    for i in 1...n{
-        for _ in 1...i{
-            print("* ", terminator: "")
+    for i in 0..<n{
+        if i%2 == 1{
+            for j in 0...i{
+                print(j%2," ", terminator: "")
+            }
+            print("")
+        }else{
+            for j in 0...i{
+                print((j+1)%2," ", terminator: "")
+            }
+            print("")
         }
-        print("")
-    }
-    
-    for i in stride(from: n-1, to: 0, by: -1) {
-        for _ in 1...i{
-            print("* ", terminator: "")
-        }
-        print("")
     }
 }
 
@@ -46,15 +42,11 @@ printTriangle(5)
 /*
  Output :
  
- *
- * *
- * * *
- * * * *
- * * * * *
- * * * *
- * * *
- * *
- *
+ 1
+ 0  1
+ 1  0  1
+ 0  1  0  1
+ 1  0  1  0  1
 
  */
 
