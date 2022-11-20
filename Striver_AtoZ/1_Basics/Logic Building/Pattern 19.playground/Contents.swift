@@ -28,9 +28,41 @@
 import Foundation
 
 func printTriangle(_ n : Int){
-    let sentance = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    let arr = Array(sentance)
-    for i in 1...n{
+    for i in 0..<n{
+        var j = n - i
+        while j > 0{
+            print("*", terminator:"")
+            j -= 1
+        }
+        
+        for _ in 0..<2*i{
+            print(" ", terminator: "")
+        }
+        
+        j = n - i
+        
+        while j > 0{
+            print("*", terminator:"")
+            j -= 1
+        }
+        print("")
+    }
+    
+    for i in 0..<n{
+        for _ in 0...i{
+            print("*", terminator: "")
+        }
+        
+        var j = 2*(n - i - 1)
+        
+        while j > 0{
+            print(" ", terminator: "")
+            j -= 1
+        }
+        
+        for _ in 0...i{
+            print("*", terminator: "")
+        }
         
         print("")
     }
@@ -41,11 +73,16 @@ printTriangle(5)
 /*
  Output :
  
- E
- E D
- E D C
- E D C B
- E D C B A
+ **********
+ ****  ****
+ ***    ***
+ **      **
+ *        *
+ *        *
+ **      **
+ ***    ***
+ ****  ****
+ **********
 
 
  */
