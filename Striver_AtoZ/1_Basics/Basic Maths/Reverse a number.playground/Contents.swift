@@ -52,5 +52,5 @@ func reverseNumber(_ x : Int) -> Int{
 print(reverseNumber(1234)) // 4321
 print(reverseNumber(74836782728281918)) // 0
 /*
- TC : O(n) , SC : O(1)
+ TC : O(logn) , SC : O(1)
  */
