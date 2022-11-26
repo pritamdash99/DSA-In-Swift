@@ -33,3 +33,14 @@ func countDigits1(_ n : Int) -> Int {
 }
 print(countDigits1(12345)) // 5
 
+/*
+ Approach 2 :
+ Convert the num into a string and return the size of the string.
+ TC : O(n) SC : O(1)
+ */
+func countDigits2(_ n : Int) -> Int {
+    let n = String(n)
+    return n.count
+}
+print(countDigits2(12345)) // 5
+
