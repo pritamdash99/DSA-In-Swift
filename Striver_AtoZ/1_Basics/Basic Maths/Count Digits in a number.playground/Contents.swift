@@ -17,6 +17,19 @@ import Foundation
  Explanation: N has 4 digits
 
  */
-func countDigits(_ n : Int) -> Int {
-    return 0
+
+/*
+ Approach 1 :
+ Use  while n != 0 to convert n = n/ 10. For every iteration increment the counter.
+ TC : O(n) , SC : O(1)
+ */
+func countDigits1(_ n : Int) -> Int {
+    var n = n, counter = 0
+    while n != 0 {
+        n = n/10
+        counter += 1
+    }
+    return counter
 }
+print(countDigits1(12345)) // 5
+
