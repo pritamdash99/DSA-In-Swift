@@ -37,3 +37,24 @@ func gcd1(_ a : Int, _ b : Int) -> Int {
 //Testing
 print(gcd1(3, 6)) // O/p = 3
 
+/*
+ Intuition : GCD is the greatest number that divides a and b. If a number divides a and b then that number should divide a-b and b as well.
+ gcd (a,b) = gcd(b,a%b)
+ Aproach 2 : Using euclidean's theorem
+ 
+ Recursively call gcd(b,a%b) till the base condition is reached.
+ b == 0 is the base condition, when the base condition is reached gcd(a,0) would be a so we return a at that point.
+ */
+
+func gcd2(_ a : Int, _ b : Int) -> Int {
+    
+    if b == 0 {
+        return a
+    }
+    return gcd2(b,a%b)
+}
+// TC - O(logɸmin(a,b)),where ɸ is 1.61. , SC - O(1)
+
+
+//Testing
+print(gcd2(3, 6)) // O/p = 3
