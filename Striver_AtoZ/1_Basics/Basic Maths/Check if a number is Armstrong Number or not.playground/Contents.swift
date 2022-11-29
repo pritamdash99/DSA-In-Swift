@@ -44,7 +44,7 @@ func armstrongNumber(_ n : Int) -> Bool{
 
 func power(_ n : Int, _ pow : Int) -> Int{
     var x = 1
-    for _ in 0..<3{
+    for _ in 0..<pow{
         x *= n
     }
     return x
