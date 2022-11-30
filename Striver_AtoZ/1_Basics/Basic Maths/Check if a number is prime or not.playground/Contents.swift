@@ -37,3 +37,22 @@ print(checkPrime(13))
  TC - O(n) SC - O(1)
  */
 
+/*
+ Intuition : Going from 2 to sqrt(n) and finding a number that divides n will tell us that it is not prime, if no number exists then prime.
+ Aproach :
+ Traverse i from 2 to sqrt(n) - 1 and check if n % i == 0, if yes then not prime else prime
+ */
+func checkPrimeOptimised(_ n : Int) -> Bool{
+    let count = Int(sqrt(Double(n)))
+    for i in 2..<count{
+        if n % i == 0 {
+            return false
+        }
+    }
+    return true
+}
+print(checkPrimeOptimised(13))
+/*
+ O/p : true
+ TC - O(sqrt(n)) SC - O(1)
+ */
