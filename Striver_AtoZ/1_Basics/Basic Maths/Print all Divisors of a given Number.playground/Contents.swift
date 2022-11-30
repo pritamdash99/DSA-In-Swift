@@ -48,3 +48,42 @@ printDivisors1(36)
  Time Complexity: O(n), because the loop has to run from 1 to n always.
  Space Complexity: O(1), we are not using any extra space.
  */
+
+/*
+ 
+ 2nd Intuition :
+ If a number has a divisor other than 1 then the quotient of that divisor is also a divisor. So the first divisor would always fall inside the range of [ 1 to square root of the number]. So instead of travelling from 1 to n we can travel 1 to sqrt(n).
+ Aproach :
+ Find the sqrt of n and store in m
+ iterate i from 1 to m
+ if i is a divisor of n then print it.
+ if i is a perfect square then don't print the quotient else print n / i (quotient)
+ The quotients are the numbers that are on the other side of the root. So, its okay if we stop traversing at root.
+ Here the order of the print will not be same.
+ Incase you need to print in a increasing order then store i in array and sort it and then print it.
+ */
+
+func printDivisorOptimal(_ n : Int){
+    let m = Int(sqrt(Double(n)))
+    print("Start for n =", n)
+    for i in 1...m{
+        if n % i == 0 {
+            print(i,"", terminator: "")
+            if i != n/i {
+                print(n/i,"", terminator: "")
+            }
+        }
+    }
+    print("\nDone")
+}
+
+printDivisorOptimal(40)
+/*
+ O/p :
+ Start for n = 40
+ 1 40 2 20 4 10 5 8
+ Done
+ 
+ Time Complexity: O(sqrt(n)), because everytime the loop runs only sqrt(n) times.
+ Space Complexity: O(1), we are not using any extra space.
+ */
