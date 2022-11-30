@@ -17,3 +17,23 @@
  Explanation: 26 is not prime
  */
 
+import Foundation
+/*
+ Intuition : Going from 2 to n and finding a number that divides n will tell us that it is not prime, if no number exists then prime.
+ Aproach :
+ Traverse i from 2 to n-1 and check if n % i == 0, if yes then not prime else prime
+ */
+func checkPrime(_ n : Int) -> Bool{
+    for i in 2..<n{
+        if n % i == 0 {
+            return false
+        }
+    }
+    return true
+}
+print(checkPrime(13))
+/*
+ O/p : true
+ TC - O(n) SC - O(1)
+ */
+
