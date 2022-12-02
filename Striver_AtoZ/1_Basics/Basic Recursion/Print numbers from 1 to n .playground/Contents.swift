@@ -30,23 +30,14 @@ import Foundation
 
 func printNos(_ i : Int, _ n : Int){
     if i>n { return }
-    print(i)
+    print(i, terminator: " ")
     printNos(i+1,n)
 }
 
 printNos(1, 10)
 /*
  O/p :
- 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
+ 1 2 3 4 5 6 7 8 9 10 
  
  TC : O(n)
  SC : O(n) as previous qsn.
