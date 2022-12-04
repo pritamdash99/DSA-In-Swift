@@ -20,4 +20,4 @@ func findFactorial2(_ n :Int) -> Int{
     }
     return n * findFactorial2(n-1)
 }
-print(findFactorial2(5))
+print(findFactorial2(5)) // 120
