@@ -33,7 +33,7 @@
 
  */
 import Foundation
-
+//Recursive solution
 class Solution {
     func isPalindrome(_ s: String) -> Bool {
         var arr = Array(s)
@@ -60,4 +60,36 @@ print(x.isPalindrome("A man, a plan, a canal: Panama")) // true
 /*
  TC : O(n), as filter consumes O(n) even though the actual work goes till n/2.
  SC : O(n)
+ */
+
+
+
+class Solution2 {
+    func isPalindrome(_ s: String) -> Bool {
+        var arr = Array(s.lowercased())
+        arr = arr.filter{
+            $0.isNumber || $0.isLetter
+        }
+        
+        var i = 0
+        let n = arr.count
+        if n == 0 {
+            return true
+        }
+        while i <= n/2 {
+            if arr[i] != arr[n-i-1]{
+                    return false
+            }
+            i += 1
+        }
+        return true
+    }
+}
+
+let y = Solution2()
+print(y.isPalindrome(" ")) // true
+
+/*
+ TC : O(n), as filter consumes O(n) even though the actual work goes till n/2.
+ SC : O(n) as array gets stored and mutated.
  */
