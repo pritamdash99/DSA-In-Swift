@@ -33,6 +33,7 @@
 import Foundation
 
 class Solution {
+    //O(2^n)
     func fib(_ n: Int) -> Int {
         guard n < 31 && n > -1 else { return 0 }
         if n <= 1{ return n }
@@ -42,17 +43,16 @@ class Solution {
     }
     
     func fibIterative(_ n : Int) -> Int{
-        var arr = Array(repeating: 0, count: n+1)
-        arr[0] = 0
-        arr[1] = 1
-        for i in 2...n{
-            arr[i] = arr[i-1] + arr[i-2]
+        guard n >= 2 && n <= 30 else { return n }
+        var prev = 0, next = 1
+        for _ in 2...n {
+            (prev,next) = (next, prev + next)
         }
-        return arr[n]
+        return next
     }
 }
 
 let x = Solution()
 print(x.fib(4)) // 3
 //print(x.fib(30)) // 832040
-print(x.fibIterative(10)) // 55
+print(x.fibIterative(0)) // 0
